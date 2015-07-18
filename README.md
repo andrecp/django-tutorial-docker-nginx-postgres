@@ -22,21 +22,28 @@ Compose is a tool for defining and running multi-container applications with Doc
 https://docs.docker.com/compose/
 
 We have three containers: Nginx, Postgres and a Django App.
+
 * django
-    Built from ./Dockerfile, running gunicorn to serve our django app.
+ 
+  - Built from ./Dockerfile, running gunicorn to serve our django app.
+
 * postgres
-    Just the basic image from DockerRegistry
+    - Just the basic image from DockerRegistry.
+
 * nginx
-    We are building it from nginx/Dockerfile, in our nginx/nginx.conf we are basically bypassing django and serving static files which gunicorn doesn't do for us.
+    - We are building it from nginx/Dockerfile. In our nginx/nginx.conf we are basically proxying django to gunicorn and serving static files which gunicorn doesn't do for us.
 
 #### rebuild_docker.sh
 Created to make life easier:
-1. docker-compose build
-    Builds your docker-compose file
-2. docker-compose up -d
-    Runs your containers on detached mode
-3. docker-compose ps
-    Check if they are all running
+
+1. Build your docker-compose file.
+  - docker-compose build
+
+2. Runs your containers on detached mode.
+  - docker-compose up -d
+
+3. Check if they are all running.
+  - docker-compose ps
 
 #### Important
 This project first started as me following the awesome introduction from Andrew T. Baker at the PyCon US 2015 [link](http://docker.atbaker.me/)

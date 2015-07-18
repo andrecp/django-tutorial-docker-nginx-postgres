@@ -1,7 +1,6 @@
 ### Django tutorial using Docker, Nginx, Gunicorn and PostgreSQL.
 
-Trying to learn Django, Gunicorn, Docker and Nginx all at the same time?
-This is the right repo!
+This is Django tutorial in steroids, I wanted to go through the tutorial using a configuration that is more close to production. I am running the django app with gunicorn, using postgres as the database, the django app is behind nginx and everything is running out of Docker containers orchastrated with docker-compose.
 
 At the moment I am in the [Part 2 of Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial02/), will continue the quest and update the git repo accordingly. (Getting docker-compose and nginx right took some time)
 

@@ -10,11 +10,10 @@ I am running this on a Macbook air running Yosemite with boot2docker.
 
 #### Running
 1. git clone this repo
-2. create a dir called logs for nginx, e.g: mkdir logs
-3. boot2docker up
-4. sh rebuild_docker.sh
-5. run migrations in your Django instance: docker-compose run django /bin/sh -c 'cd mysite;python manage.py migrate'
-6. access it in your browser! http://192.168.59.103/ for me, run boot2docker ip to know where it is running.
+2. boot2docker up
+3. sh rebuild_docker.sh
+4. run migrations in your Django instance: docker-compose run django /bin/sh -c 'cd mysite;python manage.py migrate'
+5. access it in your browser! http://192.168.59.103/ for me, run boot2docker ip to know where it is running.
 
 #### [docker-compose.yml](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/blob/master/docker-compose.yml)
 Compose is a tool for defining and running multi-container applications with Docker. With Compose, you define a multi-container application in a single file, then spin your application up in a single command which does everything that needs to be done to get it running.

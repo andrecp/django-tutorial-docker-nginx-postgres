@@ -13,7 +13,7 @@ I am running this on a Macbook air running Yosemite with boot2docker.
 2. create a dir called logs for nginx, e.g: mkdir logs
 3. boot2docker up
 4. sh rebuild_docker.sh
-5. run migrations in your Django instance: docker-compose run django /bin/sh -c 'cd mysite;python manage.py migrate'
+5. run migrations in your Django instance: ```docker-compose run django /bin/sh -c 'cd mysite;python manage.py migrate'```
 6. access it in your browser! http://192.168.59.103/ for me, run boot2docker ip to know where it is running.
 
 #### [docker-compose.yml](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/blob/master/docker-compose.yml)

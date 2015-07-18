@@ -1,0 +1,28 @@
+# Docker-compose.yml file for atbaker/docker-django project
+
+# Nginx
+nginx:
+    build: ./nginx
+    volumes:
+        - .:/usr/src/app
+    links:
+        - django
+    ports:
+        - "80:80"
+
+# This defines a service for the Django app
+django:
+    build: .
+    volumes:
+        - .:/usr/src/app
+    expose:
+        - "8000"
+    links:
+        - postgres
+
+
+# This defines a service for the Postgres database
+postgres:
+    image: postgres:9.3
+
+

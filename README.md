@@ -4,7 +4,12 @@ This is Django tutorial in steroids, I wanted to go through the tutorial using a
 
 I am running the django app with gunicorn, using postgres as the database, the django app is behind nginx and everything is running out of Docker containers orchastrated with docker-compose.
 
-At the moment I am in the [Part 2 of Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial02/), will continue the quest and update the git repo accordingly. (Getting docker-compose and nginx right took some time)
+At the moment I am in the [Part 5 of Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial05/), will continue the quest and update the git repo accordingly. (Getting docker-compose and nginx right took some time)
+
+[Commit at beggining of Part 2](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/24def5c2e962e74fd41132fb8caef5ef5d9a92f5)
+[Commit at beggining of Part 3](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/3a9bb28648f7fe84675fba6e50c36968d5e22cf5)
+[Commit at beggining of Part 4](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/fda3c34191574867cd07b8c5006f7d1ff6188f52)
+[Commit at beggining of Part 5](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/186309a739908cd2b498aad540c95acf41230f93)
 
 #### Setup
 I am running this on a Macbook air running Yosemite with boot2docker.
@@ -44,6 +49,21 @@ Created to make life easier:
 
 3. Check if they are all running.
   - docker-compose ps
+
+#### Running commands inside containers
+use ```docker-compose run CONTAINER_NAME command``` for example:
+
+* Testing polls app
+  - docker-compose run django /bin/sh -c 'cd mysite;python manage.py test polls'
+
+* Running ls
+  - docker-compose run django /bin/sh -c 'ls'
+
+* Running Python directly
+  - docker-compose run django python
+
+#### Checking logs
+use ```docker-compose logs CONTAINER_NAME```
 
 #### Important
 This project first started as me following the awesome introduction from Andrew T. Baker at the PyCon US 2015 [link](http://docker.atbaker.me/)

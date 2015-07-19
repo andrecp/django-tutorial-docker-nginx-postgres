@@ -4,7 +4,9 @@ This is Django tutorial in steroids, I wanted to go through the tutorial using a
 
 I am running the django app with gunicorn, using postgres as the database, the django app is behind nginx and everything is running out of Docker containers orchastrated with docker-compose.
 
-At the moment I am in the [Part 6 of Django tutorial](https://docs.djangoproject.com/en/1.8/intro/tutorial06/), will continue the quest and update the git repo accordingly. (Getting docker-compose and nginx right took some time)
+#### Commits by tutorial parts
+
+I've just finished going throught Django tutorial so the adventure on this repository is over, however have fun picking a start point:
 
 [Commit at beggining of Part 2](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/24def5c2e962e74fd41132fb8caef5ef5d9a92f5)
 
@@ -15,6 +17,8 @@ At the moment I am in the [Part 6 of Django tutorial](https://docs.djangoproject
 [Commit at beggining of Part 5](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/186309a739908cd2b498aad540c95acf41230f93)
 
 [Commit at beggining of Part 6](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/commit/d8888f803a36ff862fc84faae87b34b726610f06)
+
+[Branch with reusuable-apps advanced tutorial](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/tree/reusable-apps)
 
 #### Setup
 I am running this on a Macbook air running Yosemite with boot2docker.

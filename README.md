@@ -20,6 +20,8 @@ I've just finished going throught Django tutorial so the adventure on this repos
 
 [Branch with reusuable-apps advanced tutorial](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/tree/reusable-apps)
 
+[Branch with end of part 6 running on AWS](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/tree/tutorial-on-aws)
+
 #### Setup
 I am running this on a Macbook air running Yosemite with boot2docker.
 
@@ -29,6 +31,15 @@ I am running this on a Macbook air running Yosemite with boot2docker.
 3. sh rebuild_docker.sh
 4. run migrations in your Django instance: ```docker-compose run django /bin/sh -c 'cd mysite;python manage.py migrate'```
 5. access it in your browser! http://192.168.59.103/ for me, run boot2docker ip to know where it is running.
+
+#### Running on AWS
+1. switch to branch tutorial-on-aws
+2. install docker-machine
+3. ```docker-machine create --driver=amazonec2 --amazonec2-access-key=YOUR_ACCESS_KEY --amazonec2-secret-key=YOUR_SECRET  --amazonec2-instance-type="t2.micro" --amazonec2-region="us-west-2" --amazonec2-vpc-id="YOUR_VPC_ID" django-tutorial-aws```
+4. eval "$(docker-machine env django-tutorial-aws)"
+5. ```export COMPOSE_FILE=docker-production-compose.yml```
+6. sh rebuild_docker.sh
+7. Make sure your security group has port 80 open and voila, now you have deployed it on AWS!
 
 #### [docker-compose.yml](https://github.com/andrecp/django-tutorial-docker-nginx-postgres/blob/master/docker-compose.yml)
 Compose is a tool for defining and running multi-container applications with Docker. With Compose, you define a multi-container application in a single file, then spin your application up in a single command which does everything that needs to be done to get it running.

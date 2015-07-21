@@ -2,7 +2,7 @@
 
 # Nginx
 nginx:
-    build: ./nginx
+    image: andrecp/test-nginx
     links:
         - django
     ports:
@@ -10,9 +10,7 @@ nginx:
 
 # This defines a service for the Django app
 django:
-    build: .
-    volumes:
-        - .:/usr/src/app
+    image: andrecp/test-django
     expose:
         - "8000"
     links:
